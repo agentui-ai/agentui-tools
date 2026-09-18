@@ -1,0 +1,20 @@
+{
+    "name": "agentui-tools",
+    "description": "Build and host real apps with AgentUI — hosted database, auth, file storage, serverless endpoints, cron automations, standalone MCP servers and API integrations — all driven from the agentui CLI.",
+    "version": "0.1.0",
+    "author": {
+        "name": "AgentUI"
+    },
+    "homepage": "https://github.com/nesbtesh/agentui-tools",
+    "repository": "https://github.com/nesbtesh/agentui-tools",
+    "license": "MIT",
+    "keywords": [
+        "agentui",
+        "app-hosting",
+        "database",
+        "mcp",
+        "integrations",
+        "automations",
+        "cli"
+    ]
+}

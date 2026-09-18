@@ -1,0 +1,14 @@
+{
+    "name": "agentui-tools",
+    "owner": {
+        "name": "AgentUI"
+    },
+    "plugins": [
+        {
+            "name": "agentui-tools",
+            "source": "./",
+            "description": "Build and host real apps with AgentUI — hosted database, auth, file storage, serverless endpoints, cron automations, standalone MCP servers and API integrations — all driven from the agentui CLI."
+        }
+    ],
+    "description": "AgentUI — build and host real apps (database, auth, file storage, MCP tools, integrations, automations) from Claude Code."
+}
