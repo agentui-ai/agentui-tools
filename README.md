@@ -26,7 +26,7 @@ Works in **Cursor**, **Claude Code**, and any client that reads the
 ### Cursor
 
 ```bash
-git clone https://github.com/nesbtesh/agentui-tools.git ~/.cursor/plugins/local/agentui-tools
+git clone https://github.com/agentui-ai/agentui-tools.git ~/.cursor/plugins/local/agentui-tools
 ```
 
 Reload Cursor, then confirm the skills appear under **Customize → Plugins / Skills**.
@@ -42,7 +42,7 @@ claude --plugin-dir /path/to/agentui-tools          # try it for one session
 or install it properly:
 
 ```
-/plugin marketplace add nesbtesh/agentui-tools
+/plugin marketplace add agentui-ai/agentui-tools
 /plugin install agentui-tools@agentui-tools
 ```
 
