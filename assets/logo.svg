@@ -1,17 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="AgentUI Tools">
-  <title>AgentUI Tools</title>
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#5B8DEF"/>
-      <stop offset="1" stop-color="#7C4DFF"/>
-    </linearGradient>
-  </defs>
-  <rect width="256" height="256" rx="56" fill="url(#g)"/>
-  <!-- A hosted stack: three plates (app, data, storage) seen in perspective,
-       with the top plate lifted — the app going live. -->
-  <g fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M128 52 199 92 128 132 57 92 Z"/>
-    <path d="M57 128 128 168 199 128" opacity="0.72"/>
-    <path d="M57 164 128 204 199 164" opacity="0.44"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" fill="none" role="img" aria-label="AgentUI">
+  <title>AgentUI</title>
+  <rect width="192" height="192" fill="#fff"/>
+  <!-- The AgentUI mark: the wordmark's "A" and its dot (path data taken verbatim
+       from agentui-logo.svg on agentui.ai), rotated 45° the way the site's
+       favicon sets it. Mark bbox is 52.69 x 66.12 about (26.345, 33.69); at 45°
+       that occupies 84 x 84, scaled x2 into a 168px field with 12px padding. -->
+  <g fill="#6365B8" transform="translate(96 96) scale(2) rotate(45) translate(-26.345 -33.69)">
+    <polygon points="32.8 0.63 19.89 0.63 0 56.02 11.65 56.02 26.31 13.47 40.97 56.02 52.69 56.02 32.8 0.63"/>
+    <path d="M31.89,56V66.75H20.8V56Z"/>
   </g>
 </svg>
