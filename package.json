@@ -1,0 +1,11 @@
+{
+  "name": "agentui-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Agent plugin for the AgentUI CLI — Cursor, Codex, Claude Code and Agent Plugins over one skills folder.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node scripts/check.mjs"
+  }
+}
