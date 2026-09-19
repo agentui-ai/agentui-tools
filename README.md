@@ -18,8 +18,9 @@ nobody can open on their phone. With this plugin it returns a URL — with a Pos
 database, logins, uploads and an `/api`. Ask it for "an MCP server" and it builds and
 hosts a standalone one instead of hand-rolling transport and auth.
 
-Works in **Cursor**, **Codex**, **Claude Code**, and any client that reads the
-[Agent Plugins](https://agent-plugins.org) format — one skills folder, four manifests.
+Works in **Cursor**, **Codex**, **Claude Code**, **Gemini CLI**, and any client that
+reads the [Agent Plugins](https://agent-plugins.org) format — one skills folder, four
+manifests.
 
 ## Install
 
@@ -52,6 +53,18 @@ or install it properly:
 /plugin marketplace add agentui-ai/agentui-tools
 /plugin install agentui-tools@agentui-tools
 ```
+
+### Gemini CLI (and ~75 other agents)
+
+Gemini CLI has no plugin marketplace, so install the skills directly:
+
+```bash
+npx skills add agentui-ai/agentui-tools --agent gemini-cli --global
+```
+
+They land in `~/.agents/skills/`, the shared Agent Skills location. Drop `--global` to
+install into the current project instead, and swap the agent id (`opencode`, `aider`, …)
+for any other supported agent.
 
 ### Any Agent Plugins client
 
