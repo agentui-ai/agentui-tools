@@ -1,0 +1,39 @@
+{
+  "name": "agentui-tools",
+  "version": "0.1.0",
+  "description": "Build and host real apps with AgentUI — hosted database, auth, file storage, serverless endpoints, cron automations, standalone MCP servers and API integrations — all driven from the agentui CLI.",
+  "author": {
+    "name": "AgentUI",
+    "url": "https://www.agentui.ai/"
+  },
+  "homepage": "https://github.com/agentui-ai/agentui-tools",
+  "repository": "https://github.com/agentui-ai/agentui-tools",
+  "license": "MIT",
+  "keywords": [
+    "agentui",
+    "app-hosting",
+    "database",
+    "mcp",
+    "integrations",
+    "automations",
+    "cli"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AgentUI Tools",
+    "shortDescription": "Build and host real apps — database, auth, storage, MCP servers.",
+    "longDescription": "Wraps the agentui CLI in eight model-invoked skills, so instead of scaffolding a local project nobody can open, Codex returns a working URL — with a hosted Postgres database, user logins, file uploads and an /api. Covers shipping an app, entity schemas and row-level security, workspace file storage, cron and webhook automations, API integrations, and custom MCP servers including standalone ones. Requires the agentui CLI (npm install -g @agentuiai/cli) and an AgentUI account.",
+    "developerName": "AgentUI",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "websiteURL": "https://www.agentui.ai/",
+    "brandColor": "#6365B8",
+    "defaultPrompt": [
+      "Build and host an app for this with AgentUI, and give me the URL",
+      "Turn this into a standalone MCP server on AgentUI"
+    ],
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.png",
+    "screenshots": []
+  }
+}

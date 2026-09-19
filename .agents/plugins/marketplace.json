@@ -1,0 +1,19 @@
+{
+  "name": "agentui",
+  "interface": {
+    "displayName": "AgentUI"
+  },
+  "plugins": [
+    {
+      "name": "agentui-tools",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

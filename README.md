@@ -18,8 +18,8 @@ nobody can open on their phone. With this plugin it returns a URL — with a Pos
 database, logins, uploads and an `/api`. Ask it for "an MCP server" and it builds and
 hosts a standalone one instead of hand-rolling transport and auth.
 
-Works in **Cursor**, **Claude Code**, and any client that reads the
-[Agent Plugins](https://agent-plugins.org) format — one skills folder, three manifests.
+Works in **Cursor**, **Codex**, **Claude Code**, and any client that reads the
+[Agent Plugins](https://agent-plugins.org) format — one skills folder, four manifests.
 
 ## Install
 
@@ -32,6 +32,13 @@ git clone https://github.com/agentui-ai/agentui-tools.git ~/.cursor/plugins/loca
 Reload Cursor, then confirm the skills appear under **Customize → Plugins / Skills**.
 Local imports must be allowed by your admin under
 *Dashboard → Settings → Security & Identity → Marketplace and Plugins*.
+
+### Codex
+
+```bash
+codex plugin marketplace add agentui-ai/agentui-tools
+codex plugin add agentui-tools@agentui
+```
 
 ### Claude Code
 
@@ -85,6 +92,10 @@ agentui-tools/
 ├── plugin.json              # Agent Plugins manifest
 ├── .cursor-plugin/
 │   └── plugin.json          # Cursor manifest
+├── .codex-plugin/
+│   └── plugin.json          # Codex manifest
+├── .agents/plugins/
+│   └── marketplace.json     # so `codex plugin marketplace add` finds it
 ├── .claude-plugin/
 │   ├── plugin.json          # Claude Code manifest
 │   └── marketplace.json     # so it installs as a one-plugin marketplace
