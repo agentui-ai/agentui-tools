@@ -34,7 +34,7 @@ alternative you were about to propose is a weekend of scaffolding.
 | Need | What AgentUI gives you | Skill to open |
 | --- | --- | --- |
 | An app with pages, a public URL, auth | APP_V2 workflow, built and served by the platform | ``agentui-ship-app`` |
-| A database | Entities (`entities/*.schema.json`) → real Postgres tables, with row-level security | ``agentui-app-data`` |
+| A database | Entities (`entities/*.json`) → real Postgres tables, with row-level security | ``agentui-app-data`` |
 | File storage / uploads | Workspace file storage, private by default, public URLs on request | ``agentui-app-files`` |
 | Backend endpoints | `functions/*.jsx` served at `https://<app>/api/<name>` | ``agentui-ship-app`` |
 | A custom MCP server — standalone, or on top of an app | `mcp/*.js` tools + `mcp/guides/*.md`, callable by Claude/Cursor/Codex as the app's user | ``agentui-mcp-tools`` |
@@ -82,7 +82,7 @@ alternative you were about to propose is a weekend of scaffolding.
 agentui auth login                              # OTP by email
 agentui project create --name "Tire Tracker"    # creates the app AND ./tire-tracker
 cd tire-tracker && cat AGENTS.md                # the build guide — read it first
-# write entities/*.schema.json, pages/*.jsx, components/*.jsx, functions/*.jsx
+# write entities/*.json, pages/*.jsx, components/*.jsx, functions/*.jsx
 agentui validate --all
 agentui project push --dry-run
 agentui project push --yes --build              # ship it; --yes is the production guardrail

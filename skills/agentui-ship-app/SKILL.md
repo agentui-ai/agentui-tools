@@ -64,7 +64,7 @@ my-project/
 ├── components/*.jsx       # COMPONENT
 ├── pages/*.jsx            # PAGE        → routes
 ├── functions/*.jsx        # FUNCTION    → https://<app>/api/<name>
-├── entities/*.schema.json # ENTITY      → real database tables
+├── entities/*.json        # ENTITY      → real database tables
 └── mcp/*.js               # custom MCP tools (see `agentui-mcp-tools`)
 ```
 
