@@ -21,6 +21,29 @@ them down as plain files, `push` sends changes back, `build` makes them live.
 previous build until a rebuild runs. Close the gap deterministically with
 `agentui build` (`--yes` on production) or `agentui project push --build`.
 
+## Brand and project knowledge
+
+When the workspace has a theme, the platform writes a **design package** into the app:
+`brand.css` (the tokens, imported by the app) and `design/DESIGN.md` (the styling rules).
+`sync` pulls them like any other file. Before styling a screen,
+read `design/DESIGN.md` and use the classes it names; never paste colour values into
+components. Also read `.agentui/WORKSPACE.md` (locale defaults, workspace instructions)
+and `.agentui/PROJECT_KNOWLEDGE.md` (this app's standing requirements).
+
+```bash
+agentui design status --json               # current brand? which files did this app edit?
+agentui design import <https-url|file> --save [--app]   # shadcn/tweakcn JSON or CSS → theme
+agentui design sync --json                 # write the current brand into this app now
+agentui design sync --force --yes          # also overwrite brand files this app edited
+agentui project knowledge --json           # read Project Knowledge
+agentui project knowledge --file notes.md  # replace it (--set "<text>", --clear)
+```
+
+Theme tokens in `brand.css` (`:root` / `.dark`) are rewritten on every theme change; rules
+and custom variables you add there are kept. Change an app's colors with its theme, not by
+editing token values. `design/DESIGN.md` is only rewritten if nobody edited it;
+`design sync --force --yes` resets both files to the theme. `push --delete` never archives `brand.css` or `design/DESIGN.md`.
+
 ## New app
 
 ```bash
@@ -64,8 +87,11 @@ my-project/
 ├── components/*.jsx       # COMPONENT
 ├── pages/*.jsx            # PAGE        → routes
 ├── functions/*.jsx        # FUNCTION    → https://<app>/api/<name>
-├── entities/*.schema.json # ENTITY      → real database tables
-└── mcp/*.js               # custom MCP tools (see `agentui-mcp-tools`)
+├── entities/*.json        # ENTITY      → real database tables
+├── mcp/*.js               # custom MCP tools (see `agentui-mcp-tools`)
+├── brand.css              # workspace brand tokens, generated — see "Brand and project knowledge"
+├── design/DESIGN.md       # styling rules for this brand — generated
+└── .agentui/              # WORKSPACE.md + PROJECT_KNOWLEDGE.md, refreshed by sync
 ```
 
 `push` infers the component type from the directory and the name from the filename,

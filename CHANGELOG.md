@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0
+
+Catches up with `@agentuiai/cli` through 2026-09-27.
+
+- Entities are `entities/<Name>.json`. The old `entities/<Name>.schema.json` files are
+  table dumps an older `sync` wrote; `push` ignores them and `sync` deletes them.
+- Brand and project knowledge: `agentui design` (status, import, sync), `brand.css`,
+  `design/DESIGN.md`, `.agentui/WORKSPACE.md`, `agentui project knowledge`.
+- Workspace skills: `custom/<name>` in `agentui skills list`, and `skills pull` / `push`
+  to edit them as files.
+- Automation steps can be a script with `return` or a module with `export default`;
+  a pull backs up an untracked file it overwrites to `<file>.orig`.
+- `agentui agent-skill` noted for users running the CLI without this plugin.
+
 ## 0.1.0
 
 First release. Eight model-invoked skills covering the `@agentuiai/cli` surface:

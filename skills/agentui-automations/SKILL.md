@@ -27,7 +27,28 @@ renames the step, deleting it deletes the step — along with its run history, w
 `push` warns about first. A rename is only recognised as a rename while the contents are
 unchanged: push the rename on its own, then edit.
 
-Steps run on **Deno**, so import what you use: `import axios from "npm:axios";`
+Steps run on **Deno**, so import what you use: `import axios from "npm:axios";` —
+axios is not injected; `fetch` is global. A step is either format:
+
+```js
+// script: the body of an async function — `return` the output
+const { data } = await axios.get(inputs.url);
+return { count: data.length };
+```
+
+```js
+// module: the default export receives { inputs, initialData, stepData, env }
+import axios from "npm:axios";
+export default async function ({ inputs, env }) {
+    const { data } = await axios.get(inputs.url);
+    return { count: data.length };
+}
+```
+
+`pull` lands the platform's code. If that overwrites a file on disk that the lockfile
+does not track and whose contents differ, the old file is copied to `<file>.orig` first
+and named in the output — check for `.orig` files after a pull and merge anything
+you meant to keep.
 
 ## The loop
 

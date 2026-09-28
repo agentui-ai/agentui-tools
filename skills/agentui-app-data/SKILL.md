@@ -12,14 +12,19 @@ description: >-
 
 ## Entities are files
 
-Every table is one file: `entities/<Name>.schema.json`. `sync` writes them, `push`
-migrates the real Postgres table. There is no `agentui entities` command — the schemas
-are already on disk, read them directly.
+Every table is one file: `entities/<Name>.json`. `sync` writes them, `push`
+migrates the real Postgres table. The file name is the entity name — `Invoice.json`
+is `Invoice`. Read the schemas on disk; `agentui data entities` shows the live tables.
 
-Adding a table = writing a new `entities/Invoice.schema.json` and pushing it. Changing
+Adding a table = writing a new `entities/Invoice.json` and pushing it. Changing
 a field = editing the file and pushing. Ask `agentui skills info "Database Operations"`
 for the schema vocabulary and how app code queries these entities, and read `AGENTS.md`
 in the project — it carries the current entity-authoring rules.
+
+An `entities/<Name>.schema.json` holding `{ name, schema, workflowId }` is a table dump an
+older CLI's `sync` wrote — not an entity. `push` and `deploy` ignore it (listed under
+`ignoredSchemaDumps` in `push --dry-run --json`), `validate` flags it as info, the next
+`sync` deletes it. Don't edit it or push it; edit `entities/<Name>.json`.
 
 Inside app code, entities are imported per entity (e.g. `import { Invoice } from
 "@/entities/Invoice"`) and expose the platform's query API (`Invoice.filter(...)`,
