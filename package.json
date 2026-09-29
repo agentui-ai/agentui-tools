@@ -1,6 +1,6 @@
 {
   "name": "agentui-tools",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "description": "Agent plugin for the AgentUI CLI — Cursor, Codex, Claude Code and Agent Plugins over one skills folder.",
