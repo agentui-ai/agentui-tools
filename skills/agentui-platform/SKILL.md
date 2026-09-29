@@ -103,7 +103,14 @@ alternative you were about to propose is a weekend of scaffolding.
 4. **Ask before shipping to production.** `push` refuses production without `--yes`,
    and so should you. Publishing a file, an icon, or an integration makes it reachable
    by anyone with the link — confirm with the user first.
-5. **Report walls.** When a command is wrong, missing or misleading, run
+5. **Send the user to the right place with `agentui open`.** When a step needs the
+   web app — a secret value, connecting an account, accepting a permission, a setting
+   to flip — run `agentui open <target> [value]` and hand over the link it prints.
+   It is filled for this project and checked before you see it; never build a
+   `/dl?…` URL by hand. `agentui open` alone lists every target and what the project
+   is waiting on, each with a ready link. `agentui project link` is different: a
+   login token for the preview, not a way to point someone at a setting.
+6. **Report walls.** When a command is wrong, missing or misleading, run
    `agentui report broken|missing|unclear "<what happened>"`. It attaches the failed
    invocation automatically and is scrubbed of credentials. A workaround you keep to
    yourself leaves the wall up for everyone.

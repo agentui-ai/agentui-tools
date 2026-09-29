@@ -23,8 +23,9 @@ agentui integrations alerts                      # auth expired, rate limits, re
 ```
 
 Config, tokens and auth state are **never returned** — only the type and whether it is
-connected. If something the app needs is not authenticated, say so and let the user
-connect it in the dashboard; you cannot do it from here.
+connected. If something the app needs is not authenticated, say so and hand the user
+`agentui open integration <provider>` — a link to the connect screen for that
+provider. You cannot connect it from here.
 
 Before writing HTTP calls by hand, check `agentui guide external-api` and
 `agentui integrations docs <platform>`. The platform handles credentials, encryption,

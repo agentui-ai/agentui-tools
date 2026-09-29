@@ -210,7 +210,9 @@ this one workflow** — a sibling automation in the same app does not inherit th
 ```bash
 agentui project open                      # the editor, in the browser
 agentui project open --preview --print    # the PRODUCTION app URL (see the warning below)
-agentui project link                      # pre-authed deep link, 7 days
+agentui open                              # what the project needs from a person, with links
+agentui open setting ssoEnabled           # a link to one place in the web app (see below)
+agentui project link                      # pre-authed LOGIN link to the preview, 7 days
 agentui project link --scope iframe       # 1 hour, for embedding
 agentui project icon logo.png --yes       # app icon → all PWA sizes + rebuild
 ```
@@ -220,8 +222,12 @@ consult `agentui env current`. **After building a non-production environment, do
 hand the user that URL**: take `previewUrl` from the `--build` output, or the
 environment's own URL from `agentui env status`.
 
-A `project link` lets anyone holding it act as the user in that workflow until it
-expires — hand it over only on a channel the user chose.
+`agentui open <target> [value]` is how you point the user at a place in the web app —
+a table, a setting, a panel, the box for a missing secret. Run `agentui open` alone for
+the targets; an unknown table or setting is refused with the valid values.
+
+A `project link` is a login token, not a pointer: anyone holding it acts as the user in
+that workflow until it expires — hand it over only on a channel the user chose.
 
 ## Blueprints
 

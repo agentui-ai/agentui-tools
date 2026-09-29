@@ -16,10 +16,11 @@ agentui files upload ./report.pdf                 # private by default → retur
 agentui files upload ./logo.png --public          # permanent URL anyone with the link can read
 agentui files upload ./data.csv --name q3.csv --type text/csv
 agentui files list --search invoice --mine
+agentui files list --category image --since 2026-09-01 --sort size --order desc
 agentui files download <fileId> --out ./here/
 agentui files url <fileId>                        # temporary share link (prints expiry + scope)
 agentui files publish <fileId> --yes              # make an existing private file public
-agentui files delete <fileId> --yes
+agentui files delete <fileId> [fileId...] --yes  # permanent; many ids at once
 ```
 
 ## Rules that matter
@@ -39,5 +40,17 @@ agentui files delete <fileId> --yes
 - `files list` pages at 100. `--all` walks the pages for you but **stops at 2,000 files**
   and flags the result as truncated — continue from the offset it reports rather than
   assuming you saw the whole workspace.
+
+- `files list` filters: `--category` (image, video, audio, pdf, spreadsheet,
+  document, archive, other), `--since` / `--before` (dates), `--min-size` /
+  `--max-size` (bytes), `--visibility public|private`, `--sort createdAt|name|size`,
+  `--order asc|desc`. The platform checks each one: a bad value is refused with the
+  allowed values listed.
+- `files delete` removes the file from storage and the database, and it cannot be
+  undone. Confirm with the user, list exactly which files, and only then pass `--yes`.
+  It accepts many ids and sends them in batches of 100. If any id is not found or
+  storage refuses it, the command exits 1 with `deleted`, `notFound` and `failed` in
+  the payload. Report those counts; do not say "deleted" when only some were.
+  `failed` files are still stored, and the error message includes the retry command.
 
 Use `--json` and read back the `id` — that is what every other files command takes.
