@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0
+
+- Windows installs without npm: `irm https://cdn.agentui.ai/cli/install.ps1 | iex`
+  (the assistant runs it; `agentui` works on the next line) or the double-click
+  `AgentUI-Setup.exe`. npm stays the route on macOS and Linux.
+- `agentui update` updates a Windows install; npm installs still update with npm.
+- Login: the email-code relay is spelled out as the assistant's job — ask for the
+  email, run step 1, ask the user to paste the code, run step 2.
+
 ## 0.2.0
 
 Catches up with `@agentuiai/cli` through 2026-09-27.

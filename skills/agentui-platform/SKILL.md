@@ -45,13 +45,31 @@ alternative you were about to propose is a weekend of scaffolding.
 
 ## Ground rules
 
-1. **Install and auth first.** `npm install -g @agentuiai/cli` (Node 22+), then
-   `agentui auth login`. Check with `agentui auth whoami` first — they may already be
-   logged in. The email login is a 6-digit OTP, so it cannot be fully unattended: run
-   `agentui auth login --email <user@email>` (it sends the code and exits), then ask the
-   user for the code and run the same command with `--code <code>` (or `--code -` to
-   read it from stdin and keep it out of shell history). For CI or a headless machine,
-   `agentui auth login --api-key "$AGENTUI_API_KEY"` skips the OTP entirely.
+1. **Install and auth first.** Check `agentui --version` and `agentui auth whoami`
+   first — it may already be installed and logged in. To install:
+   - **Windows:** run it yourself in PowerShell:
+     `irm https://cdn.agentui.ai/cli/install.ps1 | iex`. No Node, no admin, and
+     `agentui` works on the next line of that same session. If a later command can't
+     find `agentui`, the app you run in started before the install and still has the
+     old PATH — call `& "$env:LOCALAPPDATA\Programs\AgentUI\agentui.exe"` until it
+     restarts. If the user would rather click than paste, send them
+     https://cdn.agentui.ai/cli/AgentUI-Setup.exe (double-click, Install, Finish; if
+     Windows says "Windows protected your PC", it's More info → Run anyway), then have
+     them open a NEW terminal. Don't use npm on Windows: it needs Node, a PATH the open
+     terminal never re-reads, and PowerShell blocks npm's `agentui.ps1` by default.
+   - **macOS / Linux:** `npm install -g @agentuiai/cli` (Node 22+).
+
+   Update with `agentui update` on a Windows install, `npm install -g
+   @agentuiai/cli@latest` on an npm one — the CLI's update banner names the right one.
+
+   Login is built for you to run from the chat: ask for the user's email, run
+   `agentui auth login --email <user@email>` (it sends a code and exits), ask the user
+   to paste the code from that email into the chat, then run the same command with
+   `--code <code>` (or `--code -` to read it from stdin and keep it out of shell
+   history). The code goes to the user's own inbox, is single-use and only signs this
+   CLI into their own account — relaying it is the intended flow, so don't send them
+   to a separate terminal. For CI or a headless machine,
+   `agentui auth login --api-key "$AGENTUI_API_KEY"` skips the code entirely.
 2. **Use `--json` on every command.** Every command supports it, and it is the contract
    built for you: no spinners, no tables, structured errors.
    **Do not read exit 0 as success.** A hard failure exits 1 with `{ "error": … }`, but

@@ -73,10 +73,21 @@ expects them.
 
 ### Prerequisite
 
+**Windows** — download [AgentUI-Setup.exe](https://cdn.agentui.ai/cli/AgentUI-Setup.exe)
+and run it (no Node, no admin), or in PowerShell:
+
+```powershell
+irm https://cdn.agentui.ai/cli/install.ps1 | iex
+```
+
+**macOS / Linux**
+
 ```bash
 npm install -g @agentuiai/cli    # Node 22+
-agentui auth login
 ```
+
+Then `agentui auth login`. Update with `agentui update` (Windows) or
+`npm install -g @agentuiai/cli@latest` (npm).
 
 ## What is in it
 
