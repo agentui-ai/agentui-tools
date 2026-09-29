@@ -70,6 +70,9 @@ agentui data security suggest Invoice \
   --reason "Financial records"
 ```
 
+`agentui open security <Table>` with the same flags prints the same link, and
+`agentui open` alone lists the tables that have no rules yet.
+
 A proposal that would match no records — a field or user property that does not exist —
 is refused before the link is minted, because accepting one locks every user out of
 their own data with no error.

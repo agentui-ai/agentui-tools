@@ -8,6 +8,15 @@
 - `agentui update` updates a Windows install; npm installs still update with npm.
 - Login: the email-code relay is spelled out as the assistant's job — ask for the
   email, run step 1, ask the user to paste the code, run step 2.
+- `agentui open <target> [value]`: a link to the right place in the web app for this
+  project (a table, a setting, a panel, a missing secret, an integration's connect
+  screen), checked by the platform. `agentui open` alone lists targets and what the
+  project is waiting on. Replaces "go to the dashboard" and hand-built `/dl` links.
+- `agentui project link` is described as what it is: a preview login token.
+- `agentui files delete` takes many ids and reports `deleted` / `notFound` / `failed`;
+  it exits 1 if anything was not deleted.
+- `agentui files list` filters: `--category`, `--since`, `--before`, `--min-size`,
+  `--max-size`, `--visibility`, `--sort`, `--order`.
 
 ## 0.2.0
 
