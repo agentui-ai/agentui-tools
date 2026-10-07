@@ -83,7 +83,7 @@ irm https://cdn.agentui.ai/cli/install.ps1 | iex
 **macOS / Linux**
 
 ```bash
-npm install -g @agentuiai/cli    # Node 22+
+npm install -g @agentuiai/cli    # Node 22.12+
 ```
 
 Then `agentui auth login`. Update with `agentui update` (Windows) or

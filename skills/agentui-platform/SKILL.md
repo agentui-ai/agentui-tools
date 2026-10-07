@@ -57,7 +57,7 @@ alternative you were about to propose is a weekend of scaffolding.
      Windows says "Windows protected your PC", it's More info → Run anyway), then have
      them open a NEW terminal. Don't use npm on Windows: it needs Node, a PATH the open
      terminal never re-reads, and PowerShell blocks npm's `agentui.ps1` by default.
-   - **macOS / Linux:** `npm install -g @agentuiai/cli` (Node 22+).
+   - **macOS / Linux:** `npm install -g @agentuiai/cli` (Node 22.12+).
 
    Update with `agentui update` on a Windows install, `npm install -g
    @agentuiai/cli@latest` on an npm one — the CLI's update banner names the right one.
