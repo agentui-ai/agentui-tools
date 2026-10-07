@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1
+
+- Listing: the description now leads with what the plugin does (deploy and host apps
+  through the agentui CLI), and the Cursor category is `infrastructure`.
+- `agentui-mcp-tools`: documents the optional `openWorldHint` annotation.
+
 ## 0.3.0
 
 - Windows installs without npm: `irm https://cdn.agentui.ai/cli/install.ps1 | iex`
