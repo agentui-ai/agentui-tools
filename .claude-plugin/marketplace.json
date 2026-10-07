@@ -7,8 +7,8 @@
         {
             "name": "agentui-tools",
             "source": "./",
-            "description": "Build and host real apps with AgentUI — hosted database, auth, file storage, serverless endpoints, cron automations, standalone MCP servers and API integrations — all driven from the agentui CLI."
+            "description": "Deploy and host apps on AgentUI from your coding agent. Through the agentui CLI it creates the app, its database, user logins and file storage, and returns a live URL. It also hosts MCP servers, scheduled automations and API integrations. Requires an AgentUI account."
         }
     ],
-    "description": "AgentUI — build and host real apps (database, auth, file storage, MCP tools, integrations, automations) from Claude Code."
+    "description": "Deploy and host apps on AgentUI from Claude Code: database, user logins, file storage, MCP servers, automations and integrations, through the agentui CLI."
 }

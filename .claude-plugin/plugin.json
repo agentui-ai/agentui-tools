@@ -1,7 +1,7 @@
 {
     "name": "agentui-tools",
-    "description": "Build and host real apps with AgentUI — hosted database, auth, file storage, serverless endpoints, cron automations, standalone MCP servers and API integrations — all driven from the agentui CLI.",
-    "version": "0.3.0",
+    "description": "Deploy and host apps on AgentUI from your coding agent. Through the agentui CLI it creates the app, its database, user logins and file storage, and returns a live URL. It also hosts MCP servers, scheduled automations and API integrations. Requires an AgentUI account.",
+    "version": "0.3.1",
     "author": {
         "name": "AgentUI"
     },
