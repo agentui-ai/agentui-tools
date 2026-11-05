@@ -89,6 +89,7 @@ my-project/
 ├── functions/*.jsx        # FUNCTION    → https://<app>/api/<name>
 ├── entities/*.json        # ENTITY      → real database tables
 ├── mcp/*.js               # custom MCP tools (see `agentui-mcp-tools`)
+├── public/                # small text files served at the app root (robots.txt, sitemap.xml, verification files)
 ├── brand.css              # workspace brand tokens, generated — see "Brand and project knowledge"
 ├── design/DESIGN.md       # styling rules for this brand — generated
 └── .agentui/              # WORKSPACE.md + PROJECT_KNOWLEDGE.md, refreshed by sync
@@ -103,7 +104,17 @@ entire tree, so shared code in `utils/`, `hooks/`, `context/` and nested paths l
 `components/ui/Button.jsx` is pushed verbatim and `import … from "../utils/foo"`
 resolves at build time. Anything outside a typed directory defaults to `COMPONENT`. The
 project root's `index.html` ships too, but only when Custom index.html is enabled for
-the project — and it is the only `.html` the CLI pushes.
+the project.
+
+`public/` is the one folder of non-code files that ships: `.txt`, `.xml`, `.json`,
+`.html` and `.webmanifest` files up to 256 KB, each served verbatim at the app root
+(`public/robots.txt` → `/robots.txt`). Images, video, fonts and PDFs in `public/` are
+never pushed — push lists them under "won't be pushed"; they belong in file storage
+(`agentui-app-files`). `public/manifest.json` is merged over the generated
+manifest instead of replacing it (`start_url`, `scope`, `display`, `id` are
+refused). Published apps already serve a generated `sitemap.xml`,
+`robots.txt` and `llms.txt`, so don't write one unless the user wants to change it:
+`agentui skills info seo-public-files`.
 
 **Before writing app code**, read `AGENTS.md` and pull the conventions from the
 platform: `agentui skills list`, `agentui skills info <name>`,

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "agentui-tools",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Deploy and host apps on AgentUI from your coding agent. Through the agentui CLI it creates the app, its database, user logins and file storage, and returns a live URL. It also hosts MCP servers, scheduled automations and API integrations. Requires an AgentUI account.",
   "author": {
     "name": "AgentUI",
