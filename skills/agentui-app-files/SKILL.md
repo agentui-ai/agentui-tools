@@ -25,6 +25,10 @@ agentui files delete <fileId> [fileId...] --yes  # permanent; many ids at once
 
 ## Rules that matter
 
+- **Images, video and other media the app shows go here, not in the project.** The
+  project's `public/` folder only takes small text files served at the app root
+  (robots.txt, verification files); push skips media there.
+
 - **Private is the default and should stay the default.** `--public` and `files publish`
   make the object readable by anyone holding the link, permanently. Confirm with the
   user before either — "make it public?" is a one-line question, and un-publishing does

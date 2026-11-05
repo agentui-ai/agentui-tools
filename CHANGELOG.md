@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.2
+
+- `agentui-ship-app`: the project's `public/` folder ships small text files
+  (robots.txt, sitemap.xml, llms.txt, verification files, `.webmanifest`,
+  `.json`) served at the app root; `public/manifest.json` is merged over the
+  generated manifest. Published apps already serve a generated sitemap.xml,
+  robots.txt and llms.txt. Needs CLI 0.17.2.
+- `agentui-app-files`: images, video and other media the app shows go to file
+  storage, never `public/`.
+
 ## 0.3.1
 
 - Listing: the description now leads with what the plugin does (deploy and host apps
